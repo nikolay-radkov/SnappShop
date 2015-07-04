@@ -1,0 +1,29 @@
+<ion-view title="Sign up">
+    <ion-content class="has-header" ng-hide="isLogged">
+       
+        <div class="list list-inset" id="register-form">
+            <form name="signUpForm" ng-hide="identity.isAuthenticated()">
+                <label class="item item-input">
+                    <input type="text" placeholder="joggybear" ng-model="user.username"/>
+                </label>
+                <label class="item item-input">
+                <input type="text" placeholder="joggy@bear.com" ng-model="user.email"/>
+            </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Joggy" ng-model="user.firstname"/>
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Bear" ng-model="user.lastname"/>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Password" ng-model="user.password"/>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Confirm password" ng-model="user.confirmPassword"/>
+                </label>
+
+                <button class="button button-block button-balanced" ng-click="signup(user, signUpForm)">Register</button>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
