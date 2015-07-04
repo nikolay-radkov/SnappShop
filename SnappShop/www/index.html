@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -33,25 +33,36 @@
     <script src="js/home/controllers/HomeCtrl.js"></script>
     <script src="js/product/controllers/DetailCtrl.js"></script>
     <script src="js/product/controllers/InfoCtrl.js"></script>
+    <script src="js/home/controllers/ContentCtrl.js"></script>
 
     <!-- services -->
     <script src="js/account/services/auth.js"></script>
     <script src="js/account/services/identity.js"></script>
+    <script src="js/product/services/ProductsData.js"></script>
+</head>
+<body ng-app="starter">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content ng-controller="ContentCtrl">
 
-  </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
-  </body>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <!--
+          The views will be rendered in the <ion-nav-view> directive below
+          Templates are in the /templates folder (but you could also
+          have templates inline in this html file if you'd like).
+        -->
+        <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right">
+        <!--LOGIN-->
+        Login
+    </ion-side-menu>
+</ion-side-menus>
+</body>
 </html>

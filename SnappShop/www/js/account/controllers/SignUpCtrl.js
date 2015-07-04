@@ -5,6 +5,10 @@ app.controller('SignUpCtrl',
 
         $scope.isLogged = identity.isAuthenticated();
 
+        if(identity.isAuthenticated()) {
+            $location.path('/tab/home');
+        }
+
         $scope.signup = function (user, signUpForm) {
             console.log(user);
             if (signUpForm.$valid) {

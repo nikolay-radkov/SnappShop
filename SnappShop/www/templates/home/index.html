@@ -1,16 +1,26 @@
 <ion-view view-title="Home">
     <ion-content>
-        <ion-list>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/detail/{{chat.id}}">
-                <img ng-src="{{chat.face}}">
-                <h2>{{chat.name}}</h2>
-                <p>{{chat.lastText}}</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
 
-                <ion-option-button class="button-assertive" ng-click="remove(chat)">
-                    Delete
-                </ion-option-button>
-            </ion-item>
-        </ion-list>
+
+
+        <div class="list card" ng-repeat="product in items">
+            <div class="list item-image">
+                <img ng-src="{{product.background}}">
+                <img ng-src="{{product.type.image}}">
+
+            </div> <a class="item item-thumbnail-left" href="#/detail/{{product._id}}">
+
+                <img ng-src="{{product.author.avatar}}">
+                <h2>{{product.author.firstName}} {{product.author.lastName}}</h2>
+
+                <p>{{product.description}}</p>
+            </a>
+        </div>
+
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
     </ion-content>
 </ion-view>
+
+
+

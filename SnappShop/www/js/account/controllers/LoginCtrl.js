@@ -2,9 +2,14 @@
 
 app.controller('LoginCtrl',
     function ($scope, $location, $rootScope, identity, auth) {
+
         $scope.identity = identity;
         $scope.loginActive = true;
 
+
+        if(identity.isAuthenticated()) {
+            $location.path('/tab/home');
+        }
 
         $scope.login = function (user, loginForm) {
             if (loginForm.$valid) {
