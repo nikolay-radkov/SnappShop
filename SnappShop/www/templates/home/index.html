@@ -1,24 +1,22 @@
 <ion-view view-title="Home">
     <ion-content>
-
-
-
         <div class="list card" ng-repeat="product in items">
             <div class="list item-image">
                 <img ng-src="{{product.background}}">
                 <img ng-src="{{product.type.image}}">
 
-            </div> <a class="item item-thumbnail-left" href="#/detail/{{product._id}}">
+            </div>
+            <a class="item item-thumbnail-left" href="#/detail/{{product._id}}">
 
                 <img ng-src="{{product.author.avatar}}">
                 <h2>{{product.author.firstName}} {{product.author.lastName}}</h2>
 
                 <p>{{product.description}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
             </a>
+
         </div>
 
-
-        <i class="icon ion-chevron-right icon-accessory"></i>
     </ion-content>
 </ion-view>
 

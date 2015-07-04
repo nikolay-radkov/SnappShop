@@ -1,0 +1,12 @@
+<ion-view view-title="{{product.name}}" ng-style="{'background-image': 'url(' + product.background + ')'}">
+
+    <ion-footer-bar class="bar bar-subfooter transperant">
+        <ion-scroll direction="x" class="wide-as-needed">
+
+            <a ng-click="changeBackground(image, $index)" ng-repeat="image in product.images" ng-hide="hidden[$index]">
+                <img class="item-thumbnail-left" ng-src="{{image}}">
+            </a>
+
+        </ion-scroll>
+    </ion-footer-bar>
+</ion-view>

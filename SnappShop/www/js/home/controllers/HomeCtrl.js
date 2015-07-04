@@ -23,7 +23,6 @@ app.controller('HomeCtrl', function ($scope, productsData) {
             }
 
             $scope.items = items;
-                console.log($scope.items);
         },
         function(err){
             $scope.error = err;

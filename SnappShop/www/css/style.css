@@ -1,1 +1,22 @@
-/* Empty. Add your own CSS if you like */
+.wide-as-needed {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.scroll {
+    min-width: 100%;
+    margin:0 -300px 0 0;
+    padding-right:300px; /* Samakan dengan besar margin negatif */
+}
+.wide-as-needed img{
+    width: 30%;
+}
+
+.transperant{
+    background-color: transparent;
+    height: 19%;
+
+}
+
+.wide-as-needed .item-thumbnail-left, .wide-as-needed .item-thumbnail-left .item-content {
+    padding-left: 0;
+}
