@@ -13,10 +13,10 @@
 
                 <p class="post-price"> $ {{product.price}}</p>
 
-                <p class="post-fake">{{product.fakePercent}}% fake</p>
+                <p class="post-fake" ng-hide="{{product.votes.length === 0}}">{{product.fakePercent | number : 2}}% fake</p>
                 <span class="post-new" ng-hide="{{product.votes.length === 0}}">USED</span>
                 <span class="post-new" ng-show="{{product.votes.length === 0}}">NEW</span>
-                <span class="post-action ion-chatbox"/>
+                <span class="post-action ion-more"/>
             </div>
             <div class="row">
                 <div class="col-20">

@@ -54,7 +54,7 @@ app.factory('productsData', function ($http, $q, baseUrl) {
         },
         updateVote: function(vote) {
             var deferred = $q.defer();
-            $http.put(productsUrl + '/vote/' + id)
+            $http.put(productsUrl + '/vote/' + vote.id, vote)
                 .success(function(data){
                     deferred.resolve(data);
                 })

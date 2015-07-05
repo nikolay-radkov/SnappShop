@@ -1,4 +1,4 @@
-app.controller('DetailCtrl', function ($scope, $stateParams, $location, $ionicHistory, identity, productsData) {
+app.controller('DetailCtrl', function ($scope, $stateParams, $location, $ionicPopup, $ionicHistory, identity, productsData) {
     $scope.identity = identity;
 
     if(!identity.isAuthenticated()) {
@@ -18,7 +18,13 @@ app.controller('DetailCtrl', function ($scope, $stateParams, $location, $ionicHi
                 $scope.hidden[index] = true;
             },
             function (err) {
-                //TODO: handle error
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Cannot load product details!'
+                });
+                alertPopup.then(function (res) {
+                    $location.path('/tab/home');
+                });
             });
     };
 
@@ -29,13 +35,29 @@ app.controller('DetailCtrl', function ($scope, $stateParams, $location, $ionicHi
                     $scope.product.background = image;
                     $scope.hidden = [];
                     $scope.hidden[index] = true;
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Success',
+                        template: 'Successfully changed the background!'
+                    });
                 }
                 else {
-                    //TODO: cant update
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Error',
+                        template: 'Cannot change product background!'
+                    });
+                    alertPopup.then(function (res) {
+                        $location.path('/tab/home');
+                    });
                 }
             },
             function (err) {
-                //TODO: handle error
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Cannot change product background!'
+                });
+                alertPopup.then(function (res) {
+                    $location.path('/tab/home');
+                });
             })
     };
 

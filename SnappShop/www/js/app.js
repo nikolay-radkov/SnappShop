@@ -1,4 +1,4 @@
-var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngRoute', 'ngCookies', 'ngTouch']);
+var app = angular.module('starter', ['ionic', 'ngRoute', 'ngCookies', 'ngTouch']);
 
 app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

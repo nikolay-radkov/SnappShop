@@ -12,6 +12,8 @@
         <img class="image-responsive" ng-src="{{item.type.image}}"/>
         <span class="price">${{item.product.price}}</span>
         <span class="used" ng-hide="{{item.product.votes.length === 0}}">USED</span>
+        <div class="swipe-helper"></div>
+        <div class="swipe-helper-left"></div>
     </ion-header-bar>
 
     <ion-content class="white-content padding">
@@ -34,7 +36,7 @@
                 <span class="icon-right ion-thumbsdown" ng-click="vote(false)"></span>
             </div>
             <div class="col">
-                <span class="ion-thumbsup" ng-click="vote(false)"></span>
+                <span class="ion-thumbsup" ng-click="vote(true)"></span>
             </div>
         </div>
     </div>

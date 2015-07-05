@@ -1,13 +1,13 @@
 'use strict';
 
 app.controller('LoginCtrl',
-    function ($scope, $location, $rootScope, identity, auth) {
+    function ($scope, $location, $rootScope, $ionicPopup, identity, auth) {
 
         $scope.identity = identity;
         $scope.loginActive = true;
 
 
-        if(identity.isAuthenticated()) {
+        if (identity.isAuthenticated()) {
             $location.path('/tab/home');
         }
 
@@ -17,15 +17,33 @@ app.controller('LoginCtrl',
                 auth.login(user).then(function (success) {
                     if (success) {
                         identity.setCurrentUser(user);
-                        $location.path('/tab/home');
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Info',
+                            template: 'Successful registration'
+                        });
+                        alertPopup.then(function (res) {
+                            $location.path('/tab/home');
+                        });
                     }
                     else {
-                        $scope.error = 'Username/Password combination is not valid!';
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error',
+                            template: 'Username/Password combination is not valid!'
+                        });
                     }
+                },
+                function(){
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Error',
+                        template: 'Username/Password combination is not valid!'
+                    });
                 });
             }
             else {
-                console.log('Username and password are required fields!')
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Username and password are required fields!'
+                });
             }
         };
 

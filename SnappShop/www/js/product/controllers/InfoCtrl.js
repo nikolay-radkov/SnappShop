@@ -1,4 +1,4 @@
-app.controller('InfoCtrl', function ($scope, $stateParams, $location, $ionicHistory, identity, productsData) {
+app.controller('InfoCtrl', function ($scope, $stateParams, $location, $state, $ionicPopup, $ionicHistory, identity, productsData) {
     $scope.identity = identity;
 
     if(!identity.isAuthenticated()) {
@@ -11,29 +11,56 @@ app.controller('InfoCtrl', function ($scope, $stateParams, $location, $ionicHist
         productsData.getProductInfo(id)
             .then(function (data) {
                 $scope.item = data;
-                console.log(data);
 
                 $scope.navTitle='<img class="title-image" src="$scope.item.product.background" />';
             },
             function (err) {
-                //TODO: handle error
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Cannot get product information!'
+                });
+                alertPopup.then(function (res) {
+                    $location.path('/tab/home');
+                });
             });
     };
 
     $scope.vote = function (voteValue) {
         productsData.updateVote({
-            value: voteValue
+            value: voteValue,
+            id: id
         })
             .then(function (success) {
                 if (success) {
                     //TODO:  update view
+
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Success',
+                        template: 'You successfully voted the product!'
+                    });
+                    alertPopup.then(function (res) {
+                        $state.go( $state.current, {}, {reload: true});
+
+                    });
                 }
                 else {
-                    //TODO: cant update
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Error',
+                        template: 'Cannot vote the product!'
+                    });
+                    alertPopup.then(function (res) {
+                        $location.path('/tab/home');
+                    });
                 }
             },
             function (err) {
-                //TODO: handle error
+                var alertPopup = $ionicPopup.alert({
+                    title: 'Error',
+                    template: 'Cannot vote the product!'
+                });
+                alertPopup.then(function (res) {
+                    $location.path('/tab/home');
+                });
             })
     };
 

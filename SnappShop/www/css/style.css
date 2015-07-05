@@ -11,6 +11,25 @@ a.home-item .list {
 
 }
 
+.swipe-helper, .swipe-helper-left {
+    position: fixed;
+
+    width:10px;
+    height: 500px;
+    top: 100px;
+    background-color: rgba(108, 146, 0, 0.19);
+    opacity: 0.4;
+   box-shadow: 0 0 4px black;
+}
+
+.swipe-helper {
+    right: 0;
+}
+
+.swipe-helper-left {
+    left: 0;
+}
+
 img.post-avatar{
     width: 60%;
     height: 60%;
@@ -73,6 +92,7 @@ div.post-header .post-action {
     top: 5px;
     right: 10px;
     color: white;
+    font-size: 30px;
 }
 
 div.post-header .post-new {
@@ -155,21 +175,22 @@ a.home-item, a.home-item h2  {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #5A403B;
-    opacity: 0.8;
+    background-color: orange;
+    opacity: 0.87
 }
 
 .bar-subheader.bar.bar-header span.price {
     position: absolute;
     bottom: 5px;
-    left: 32px;
+    left: 45px;
     font-size: 16px;
 }
 
 .image-responsive {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
+    padding: 5px;
 }
 
 .bar-subheader.bar.bar-header span.used {
@@ -213,6 +234,7 @@ a.home-item, a.home-item h2  {
     background-color: white;
     top: 100px;
     bottom: 120px;
+    padding: 20px;
 }
 
 .item {

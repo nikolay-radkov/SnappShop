@@ -4,22 +4,22 @@
         <div class="list list-inset" id="register-form">
             <form name="signUpForm">
                 <label class="item item-input">
-                    <input type="text" placeholder="joggybear" ng-model="user.username"/>
+                    <input type="text" placeholder="joggybear" required ng-model="user.username"/>
                 </label>
                 <label class="item item-input">
-                <input type="text" placeholder="joggy@bear.com" ng-model="user.email"/>
+                <input type="text" placeholder="joggy@bear.com" required ng-model="user.email"/>
             </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="Joggy" ng-model="user.firstname"/>
+                    <input type="text" placeholder="Joggy" required ng-model="user.firstname"/>
                 </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="Bear" ng-model="user.lastname"/>
+                    <input type="text" placeholder="Bear" required ng-model="user.lastname"/>
                 </label>
                 <label class="item item-input">
-                    <input type="password" placeholder="Password" ng-model="user.password"/>
+                    <input type="password" placeholder="Password" required ng-model="user.password"/>
                 </label>
                 <label class="item item-input">
-                    <input type="password" placeholder="Confirm password" ng-model="user.confirmPassword"/>
+                    <input type="password" placeholder="Confirm password" required ng-model="user.confirmPassword"/>
                 </label>
 
                 <button class="button button-block button-balanced" ng-click="signup(user, signUpForm)">Register</button>
