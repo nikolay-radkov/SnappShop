@@ -1,0 +1,41 @@
+<ion-view view-title="Item info"  ng-style="{'background-image': 'url(' + item.product.background + ')'}">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-arrow-left-c"
+                ng-click="goBack()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-more" ng-click="doSomething()">
+        </button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar bar-subheader transperant">
+        <img class="image-responsive" ng-src="{{item.type.image}}"/>
+        <span class="price">${{item.product.price}}</span>
+        <span class="used" ng-hide="{{item.product.votes.length === 0}}">USED</span>
+    </ion-header-bar>
+
+    <ion-content class="white-content padding">
+        <div class="item item-thumbnail-left">
+            <img ng-src="{{item.author.avatar}}">
+
+            <h2>{{item.author.firstName}} {{item.author.lastName}}</h2>
+
+            <p class="ion-ios-location-outline">{{item.product.location}}</p>
+        </div>
+
+        <p> {{item.product.description}}</p>
+    </ion-content>
+    <div class="bar bar-footer info">
+
+        <h1 class="title">IS THE PRODUCT AUTHENTIC?</h1>
+
+        <div class="row">
+            <div class="col">
+                <span class="icon-right ion-thumbsdown" ng-click="vote(false)"></span>
+            </div>
+            <div class="col">
+                <span class="ion-thumbsup" ng-click="vote(false)"></span>
+            </div>
+        </div>
+    </div>
+</ion-view>

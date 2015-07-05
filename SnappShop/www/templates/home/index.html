@@ -1,21 +1,41 @@
 <ion-view view-title="Home">
-    <ion-content>
-        <div class="list card" ng-repeat="product in items">
-            <div class="list item-image">
-                <img ng-src="{{product.background}}">
-                <img ng-src="{{product.type.image}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-ios-plus-empty">
+            <button class="button button-icon ion-ios-search">
+            </button>
 
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="posts-padding">
+        <a class="home-item" ui-sref="detail({productId: product._id})" ng-repeat="product in items">
+            <div class="post-header" ng-style="{'background-image': 'url(' + product.background + ')'}">
+                <img class="post-type" ng-src="{{product.type.image}}">
+
+                <p class="post-price"> $ {{product.price}}</p>
+
+                <p class="post-fake">{{product.fakePercent}}% fake</p>
+                <span class="post-new" ng-hide="{{product.votes.length === 0}}">USED</span>
+                <span class="post-new" ng-show="{{product.votes.length === 0}}">NEW</span>
+                <span class="post-action ion-chatbox"/>
             </div>
-            <a class="item item-thumbnail-left" href="#/detail/{{product._id}}">
+            <div class="row">
+                <div class="col-20">
+                    <img class="post-avatar" ng-src="{{product.author.avatar}}">
+                </div>
+                <div class="col-80">
+                    <h2>{{product.author.firstName}} {{product.author.lastName}}</h2>
 
-                <img ng-src="{{product.author.avatar}}">
-                <h2>{{product.author.firstName}} {{product.author.lastName}}</h2>
-
-                <p>{{product.description}}</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
-            </a>
-
-        </div>
+                    <div class="row">
+                        <div class="col-80 post-content">
+                            <p>{{product.description}}</p>
+                        </div>
+                        <div class="col-20">
+                            <span class="post-comment ion-chatbox"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
 
     </ion-content>
 </ion-view>

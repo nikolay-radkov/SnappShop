@@ -1,12 +1,20 @@
-app.controller('DetailCtrl', function ($scope, $stateParams, productsData) {
+app.controller('DetailCtrl', function ($scope, $stateParams, $location, $ionicHistory, identity, productsData) {
+    $scope.identity = identity;
+
+    if(!identity.isAuthenticated()) {
+        $location.path('/login');
+    }
+
     var id = $stateParams.productId;
     $scope.hidden = [];
 
     var details = function (id) {
         productsData.getProductDetails(id)
             .then(function (data) {
-                $scope.product = data[0];
-                var index = data[0].images.indexOf(data[0].background);
+                $scope.product = data.product;
+                $scope.type = data.type;
+                console.log(data);
+                var index = data.product.images.indexOf(data.product.background);
                 $scope.hidden[index] = true;
             },
             function (err) {
@@ -29,6 +37,14 @@ app.controller('DetailCtrl', function ($scope, $stateParams, productsData) {
             function (err) {
                 //TODO: handle error
             })
+    };
+
+    $scope.swipeLeft = function() {
+        $location.path('/info/' + id);
+    };
+
+    $scope.goBack = function() {
+            $ionicHistory.goBack();
     };
 
     details(id);

@@ -1,22 +1,239 @@
+body {
+    font-family: "Times New Roman", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+a.home-item {
+    text-decoration: none;
+}
+
+a.home-item .list {
+    margin-bottom: 0;
+
+}
+
+img.post-avatar{
+    width: 60%;
+    height: 60%;
+    margin-top: 25px;
+    margin-left: 10px;
+
+}
+
+span.post-comment {
+    display:block;
+    font-size: 30px;
+   text-align: center;
+
+    margin-top: 10px;
+    color: saddlebrown;
+}
+
+div.post-content {
+    border-right: 1px solid saddlebrown;
+    padding-right: 5px;
+}
+div.post-content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-height: 2;        /* fallback */
+}
+
+.posts-padding {
+    padding: 60px 20px 20px 20px;
+}
+
+div.post-header {
+    position: relative;
+    height: 300px;
+}
+
+div.post-header img.post-type {
+position: absolute;
+    top:0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: orange;
+    opacity: 0.7;
+}
+
+div.post-header .post-price {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    color: white;
+}
+
+div.post-header .post-action {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+}
+
+div.post-header .post-new {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border: 2px solid orange;
+    border-radius: 1000% 2% 2% 1000%;
+    width: 45px;
+    height: 25px;
+    font-size: 12px;
+    color: orange;
+    box-shadow: 0 0 1px black;
+}
+
+div.post-header .post-fake {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+a.home-item {
+    border: 1px solid beige;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.23);
+    color: white;
+}
+
+a.home-item, a.home-item h2  {
+    color: saddlebrown;
+    font-weight: normal;
+}
+
 .wide-as-needed {
     overflow-x: scroll;
     white-space: nowrap;
 }
+
+.scroll-view {
+    margin-top: -45px !important;
+}
+
 .scroll {
     min-width: 100%;
-    margin:0 -300px 0 0;
-    padding-right:300px; /* Samakan dengan besar margin negatif */
+    margin: 0 -300px 0 0;
+    padding-right: 300px; /* Samakan dengan besar margin negatif */
 }
-.wide-as-needed img{
+
+.wide-as-needed img {
     width: 30%;
 }
 
-.transperant{
-    background-color: transparent;
-    height: 19%;
+.has-header {
+    top: 60px !important;
+}
 
+.transperant {
+    background-color: transparent !important;
+    border: none;
+}
+
+.transperant h1 {
+    color: black;
 }
 
 .wide-as-needed .item-thumbnail-left, .wide-as-needed .item-thumbnail-left .item-content {
     padding-left: 0;
+}
+
+.bar-subheader.bar.bar-header {
+    height: 45px !important;
+    position: relative;
+}
+
+.bar-subheader.bar.bar-header img.image-responsive {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #5A403B;
+    opacity: 0.8;
+}
+
+.bar-subheader.bar.bar-header span.price {
+    position: absolute;
+    bottom: 5px;
+    left: 32px;
+    font-size: 16px;
+}
+
+.image-responsive {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.bar-subheader.bar.bar-header span.used {
+    text-align: center;
+    position: absolute;
+    bottom: 2px;
+    right: 5px;
+    border: 2px solid orange;
+    border-radius: 1000% 2% 2% 1000%;
+    width: 45px;
+    height: 25px;
+    font-size: 12px;
+    color: orange;
+    box-shadow: 0 0 1px black;
+}
+
+.bar-header.bar {
+    height: 30px !important;
+    margin: 10px 0;
+}
+
+.info.bar-footer.bar {
+    height: 120px !important;
+    padding: 40px 50px;
+}
+
+.info.bar-footer.bar .title {
+    top: 10px;
+}
+
+.info.bar-footer.bar .row .col span {
+    font-size: 40px;
+}
+
+.info.bar-footer.bar .row .col {
+    margin: 10px;
+    text-align: center;
+}
+
+.white-content {
+    background-color: white;
+    top: 100px;
+    bottom: 120px;
+}
+
+.item {
+    background-color: white;
+    color: #444;
+    border: none;
+}
+
+.white-content .item.item-thumbnail-left img {
+    display: inline-block;
+    margin-right: 40px
+}
+
+.white-content .item.item-thumbnail-left p {
+    text-decoration: underline;
+}
+
+.white-content .item.item-thumbnail-left p:before {
+    margin-right: 10px;
+}
+
+ion-content h2 {
+    font-size: 30px !important;
 }

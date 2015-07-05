@@ -38,6 +38,9 @@ app.factory('auth', function ($http, $q, $location, identity, baseUrl) {
                 .success(function () {
                     identity.setCurrentUser(undefined);
                     deferred.resolve();
+                })
+                .error(function(err){
+                    deferred.reject(err);
                 });
 
             return deferred.promise;
